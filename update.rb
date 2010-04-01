@@ -24,7 +24,7 @@ require 'open-uri'
 db = SQLite3::Database.new($dbfile)
 sqls = []
 
-base_url = "http://marketing.openoffice.org/bouncer/"
+base_url = "http://marketing.openoffice.org/source/browse/marketing/www/dlstats/"
 extension = ".csv"
 
 res = db.execute("SELECT MAX(datejd) FROM #{$tblname}")
