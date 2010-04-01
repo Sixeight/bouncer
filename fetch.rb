@@ -50,7 +50,7 @@ db.execute(sql)
 # Fetch data from OpenOffice.org marketing website
 ####################################################
 
-base_url = "http://marketing.openoffice.org/source/browse/marketing/www/dlstats/"
+base_url = "http://marketing.openoffice.org/source/browse/*checkout*/marketing/www/dlstats/"
 extension = ".csv"
 month = Date.new(2008,10,01)
 #month = Date.new(2009,05,01)
