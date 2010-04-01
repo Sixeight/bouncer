@@ -18,7 +18,6 @@
 
 require './conf.rb'
 
-require 'rubygems'
 require 'sqlite3'
 require 'open-uri'
 
