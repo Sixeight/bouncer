@@ -18,6 +18,7 @@
 
 require './conf.rb'
 
+require 'rubygems'
 require 'sqlite3'
 require 'open-uri'
 
@@ -31,7 +32,8 @@ res = db.execute("SELECT MAX(datejd) FROM #{$tblname}")
 end_date = Date.jd(res[0][0].to_i) # the last date of registered data
 
 month = end_date
-while month.month <= Date.today.month
+today = Date.today
+begin
   url = base_url + month.strftime("%Y%m") + extension
 
   open(url){ |f|
@@ -55,7 +57,7 @@ while month.month <= Date.today.month
   }
 
   month = month >> 1
-end
+end while month <= today
 
 db.transaction{
   sqls.each{ |sql|
