@@ -56,7 +56,7 @@ begin
   }
 
   month = month >> 1
-end while month <= today
+end while month.month <= today.month
 
 db.transaction{
   sqls.each{ |sql|
